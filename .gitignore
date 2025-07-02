@@ -39,3 +39,30 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Production build
+/.next/
+/out/
+
+# Environment files
+.env*.local
+.env.development
+.env.test
+.env.production
+
+# Elastic Beanstalk
+.elasticbeanstalk/
+!.elasticbeanstalk/config.yml
+
+# aws key
+*.pem
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
