@@ -1,13 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Production optimizations
+  // Production optimizations for EB
   compress: true,
   poweredByHeader: false,
-  generateEtags: true,
-  
-  // Don't use standalone for EB deployment
-  // output: 'standalone',
+  generateEtags: false,
   
   // Static file serving
   assetPrefix: process.env.NODE_ENV === 'production' ? '' : '',
