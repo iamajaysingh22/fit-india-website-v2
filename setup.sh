@@ -48,7 +48,7 @@ fi
 # Initialize EB if not already done
 if [ ! -d ".elasticbeanstalk" ]; then
     echo "🔧 Initializing Elastic Beanstalk..."
-    eb init --platform "Node.js 18 running on 64bit Amazon Linux 2023" --region ap-south-1 fit-india-website-v2
+    eb init --platform "Node.js 22 running on 64bit Amazon Linux 2023" --region ap-south-1 fit-india-website-v2
 fi
 
 # Create environment if not exists
