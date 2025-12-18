@@ -17,7 +17,7 @@ export default function Hero() {
   };
 
   const handleGymOwnerClick = () => {
-    scrollToSection('gym-owners');
+    window.location.href = '/gym-partner';
   };
 
   return (
@@ -37,8 +37,8 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-hero text-neutral-900 leading-tight"
             >
-              Transform Your{' '}
-              <span className="gradient-text">Fitness Journey</span>
+              Find Your Perfect Gym.{' '}
+              <span className="gradient-text">Try Before You Commit.</span>
             </motion.h1>
             
             <motion.p
@@ -47,8 +47,8 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-large text-neutral-600 max-w-lg"
             >
-              The complete fitness ecosystem connecting gym-goers with their perfect workout community. 
-              Find gyms, track progress, and achieve your goals.
+              Book free trial sessions at top gyms near you. 
+              Experience the facilities, meet the trainers, and join only when you're sure.
             </motion.p>
           </div>
 
@@ -65,7 +65,7 @@ export default function Hero() {
               leftIcon={<Download className="w-5 h-5" />}
               className="text-lg"
             >
-              Download Free App
+              Download App
             </Button>
             <Button
               size="lg"
@@ -74,7 +74,7 @@ export default function Hero() {
               rightIcon={<ArrowRight className="w-5 h-5" />}
               className="text-lg"
             >
-              Join as Gym Owner
+              List Your Gym
             </Button>
           </motion.div>
 

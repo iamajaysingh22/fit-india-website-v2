@@ -6,6 +6,7 @@ import { Menu, X, Download } from 'lucide-react';
 import { Button } from '@/components/ui';
 import { scrollToSection } from '@/lib/utils';
 import { NavigationItem } from '@/types';
+import { useRouter, usePathname } from 'next/navigation';
 
 const navigation: NavigationItem[] = [
   { name: 'Home', href: '#hero' },
@@ -15,9 +16,15 @@ const navigation: NavigationItem[] = [
   { name: 'Contact', href: '#contact' },
 ];
 
+const routeNavigation: NavigationItem[] = [
+  { name: 'Gym Partner', href: '/gym-partner' },
+];
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,8 +36,20 @@ export default function Header() {
   }, []);
 
   const handleNavClick = (href: string) => {
-    const sectionId = href.replace('#', '');
-    scrollToSection(sectionId);
+    if (href.startsWith('#')) {
+      // Handle anchor links
+      if (pathname !== '/') {
+        // Navigate to home page first, then scroll to section
+        router.push(`/${href}`);
+      } else {
+        // Already on home page, just scroll
+        const sectionId = href.replace('#', '');
+        scrollToSection(sectionId);
+      }
+    } else {
+      // Handle route navigation
+      router.push(href);
+    }
     setIsMobileMenuOpen(false);
   };
 
@@ -62,6 +81,18 @@ export default function Header() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
+                onClick={() => handleNavClick(item.href)}
+                className="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200"
+              >
+                {item.name}
+              </motion.button>
+            ))}
+            {routeNavigation.map((item, index) => (
+              <motion.button
+                key={item.name}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: (navigation.length + index) * 0.1 }}
                 onClick={() => handleNavClick(item.href)}
                 className="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200"
               >
@@ -113,6 +144,18 @@ export default function Header() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
+                    onClick={() => handleNavClick(item.href)}
+                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200"
+                  >
+                    {item.name}
+                  </motion.button>
+                ))}
+                {routeNavigation.map((item, index) => (
+                  <motion.button
+                    key={item.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: (navigation.length + index) * 0.1 }}
                     onClick={() => handleNavClick(item.href)}
                     className="block w-full text-left px-4 py-2 text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200"
                   >
