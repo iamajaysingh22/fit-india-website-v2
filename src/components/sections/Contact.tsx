@@ -136,7 +136,7 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
           >
             <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-h3 text-neutral-900 mb-6">Get Started Today</h3>
+              <h3 className="text-h3 text-neutral-900 mb-6">Ready to Transform Your Gym?</h3>
               
               {submitStatus === 'success' && (
                 <div className="mb-6 p-4 bg-accent-50 border border-accent-200 rounded-lg flex items-center space-x-3">

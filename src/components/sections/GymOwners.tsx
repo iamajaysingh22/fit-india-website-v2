@@ -250,7 +250,7 @@ export default function GymOwners() {
               onClick={handleGetStartedClick}
               rightIcon={<ArrowRight className="w-5 h-5" />}
             >
-              Get Started Today
+              Partner with Us
             </Button>
           </div>
         </motion.div>

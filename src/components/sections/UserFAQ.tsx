@@ -161,7 +161,7 @@ export default function UserFAQ() {
             onClick={() => window.open('https://play.google.com/store', '_blank')}
             className="bg-gradient-primary text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-200"
           >
-            Download Free App
+            Find a Trial
           </motion.button>
         </div>
       </motion.div>

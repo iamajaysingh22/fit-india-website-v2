@@ -65,7 +65,7 @@ export default function Hero() {
               leftIcon={<Download className="w-5 h-5" />}
               className="text-lg"
             >
-              Download App
+              Find a Trial
             </Button>
             <Button
               size="lg"
@@ -205,7 +205,7 @@ export default function Hero() {
               </svg>
             </div>
             <div className="text-left">
-              <div className="text-xs opacity-90">GET IT ON</div>
+              <div className="text-xs opacity-90">DOWNLOAD APP</div>
               <div className="text-sm font-semibold">Google Play</div>
             </div>
           </div>

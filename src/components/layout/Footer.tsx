@@ -19,7 +19,7 @@ const footerSections: FooterSection[] = [
   {
     title: 'For Users',
     links: [
-      { name: 'Download App', href: '#hero' },
+      { name: 'Find a Trial', href: '#hero' },
       { name: 'How it Works', href: '#features' },
       { name: 'Find Gyms', href: '#features' },
       { name: 'Track Progress', href: '#features' },
@@ -185,7 +185,7 @@ export default function Footer() {
               leftIcon={<Download className="w-5 h-5" />}
               className="mb-8"
             >
-              Download Free App
+              Find a Trial
             </Button>
 
             {/* Google Play Badge */}

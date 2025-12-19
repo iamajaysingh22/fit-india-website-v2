@@ -112,7 +112,7 @@ export default function Header() {
               leftIcon={<Download className="w-4 h-4" />}
               size="md"
             >
-              Download App
+              Find a Trial
             </Button>
           </motion.div>
 
@@ -169,7 +169,7 @@ export default function Header() {
                     size="md"
                     className="w-full"
                   >
-                    Download App
+                    Find a Trial
                   </Button>
                 </div>
               </div>

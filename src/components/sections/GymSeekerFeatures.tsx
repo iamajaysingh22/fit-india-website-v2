@@ -125,7 +125,7 @@ export default function GymSeekerFeatures() {
             onClick={handleDownloadClick}
             className="text-lg"
           >
-            Download Free App
+            Find a Trial
           </Button>
         </div>
       </motion.div>
