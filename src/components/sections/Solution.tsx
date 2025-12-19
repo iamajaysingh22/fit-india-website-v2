@@ -15,22 +15,22 @@ const solutionSteps: SolutionStepProps[] = [
   {
     step: "Step 1",
     icon: <span className="text-4xl">🔍</span>,
-    title: "Discover",
-    description: "Browse gyms near you\nCompare amenities, locations, and reviews\nFilter by your fitness goals",
+    title: "Discover Instantly",
+    description: "500+ verified gyms at your fingertips\nReal photos, honest reviews, and live availability\nFilter by distance, budget, and workout style",
     delay: 0.1
   },
   {
     step: "Step 2", 
     icon: <span className="text-4xl">📅</span>,
-    title: "Try",
-    description: "Book FREE trial sessions\nExperience the gym firsthand\nNo payment. No commitment.",
+    title: "Try Risk-Free",
+    description: "Book your FREE trial in under 30 seconds\nShow up and workout - that's it!\nZero commitment, zero hidden costs",
     delay: 0.2
   },
   {
     step: "Step 3",
     icon: <span className="text-4xl">✨</span>,
-    title: "Join",
-    description: "Found your match? Join seamlessly\nDirect membership conversion\nStart your fitness journey with confidence",
+    title: "Join When Ready",
+    description: "Love it? Join with exclusive member discounts\nHate it? Walk away with no questions asked\n85% of our users find their perfect gym",
     delay: 0.3
   }
 ];

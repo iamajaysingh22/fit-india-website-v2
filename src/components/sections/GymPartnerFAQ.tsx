@@ -150,27 +150,28 @@ export default function GymPartnerFAQ() {
       >
         <div className="bg-white rounded-2xl p-8 shadow-lg border border-neutral-100 max-w-2xl mx-auto">
           <h3 className="text-h3 text-neutral-900 mb-4">
-            Ready to partner with us?
+            Don't Let Competitors Get All The Quality Members
           </h3>
           <p className="text-neutral-600 mb-6">
-            Join hundreds of successful gym owners growing their business with quality leads.
+            <strong>500+ gyms are already benefiting from 85% conversion rates.</strong> While you're thinking, 
+            your competitors are getting the motivated members. Join today and get 50% off setup.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => window.location.href = '#contact'}
-              className="bg-gradient-primary text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-200"
+              className="bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 px-10 py-5 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-200 transform text-neutral-900 border-2 border-neutral-900"
             >
-              Partner With Us
+              Start Growing Today
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => window.location.href = '#contact'}
-              className="border border-primary-600 text-primary-600 hover:bg-primary-50 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200"
+              className="border-2 border-green-600 text-green-700 hover:bg-green-50 px-8 py-5 rounded-xl font-semibold text-lg transition-all duration-200"
             >
-              Schedule Demo
+              See Live Demo
             </motion.button>
           </div>
         </div>

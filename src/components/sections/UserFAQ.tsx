@@ -150,18 +150,19 @@ export default function UserFAQ() {
       >
         <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 max-w-2xl mx-auto">
           <h3 className="text-h3 text-neutral-900 mb-4">
-            Ready to find your perfect gym?
+            Still Thinking? Your Perfect Gym is One Tap Away
           </h3>
           <p className="text-neutral-600 mb-6">
-            Start your fitness journey with free trials at gyms near you.
+            <strong>Join 15,000+ smart fitness enthusiasts</strong> who stopped overpaying for gyms they hate. 
+            Your first FREE trial takes 30 seconds to book.
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => window.open('https://play.google.com/store', '_blank')}
-            className="bg-gradient-primary text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-200"
+            className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 px-10 py-5 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-200 transform text-neutral-900 border-2 border-neutral-900"
           >
-            Find a Trial
+            Get Started - It's FREE
           </motion.button>
         </div>
       </motion.div>

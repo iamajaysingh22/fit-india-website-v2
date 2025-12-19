@@ -7,20 +7,20 @@ import { FeatureCardProps } from '@/types';
 const problems: FeatureCardProps[] = [
   {
     icon: <span className="text-4xl">💸</span>,
-    title: "Expensive Commitments",
-    description: "Pay ₹5,000-₹15,000 upfront without knowing if the gym is right for you",
+    title: "Expensive Mistakes",
+    description: "Wasted ₹10,000+ on gym memberships you barely used\nPaying upfront without knowing if you'll actually like it\nNo refunds when the gym doesn't meet expectations",
     delay: 0.1
   },
   {
     icon: <span className="text-4xl">😞</span>,
-    title: "Disappointing Experiences",
-    description: "Discover broken equipment, crowded spaces, or unfriendly staff after you've already paid",
+    title: "Gym Horror Stories",
+    description: "Overcrowded during your free time\nBroken equipment that's never fixed\nUnhelpful staff and poor hygiene standards",
     delay: 0.2
   },
   {
     icon: <span className="text-4xl">🔒</span>,
-    title: "Locked In",
-    description: "Stuck with long-term contracts at gyms that don't match your fitness goals",
+    title: "Contract Prison",
+    description: "Trapped in 12-month contracts you can't cancel\nHidden fees and automatic renewals\nGyms that changed after you joined",
     delay: 0.3
   }
 ];

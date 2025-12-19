@@ -6,9 +6,9 @@ import { Button, Section } from '@/components/ui';
 import { scrollToSection } from '@/lib/utils';
 
 const stats = [
-  { icon: Users, label: 'Active Users', value: '50K+' },
-  { icon: MapPin, label: 'Partner Gyms', value: '500+' },
-  { icon: Star, label: 'App Rating', value: '4.8' },
+  { icon: Users, label: 'Happy Members', value: '15K+' },
+  { icon: MapPin, label: 'Gyms Available', value: '500+' },
+  { icon: Star, label: 'Success Rate', value: '85%' },
 ];
 
 export default function Hero() {
@@ -22,6 +22,19 @@ export default function Hero() {
 
   return (
     <Section id="hero" background="white" padding="xl" className="pt-32 overflow-hidden">
+      {/* Limited Time Banner */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="bg-gradient-to-r from-accent-600 to-accent-500 text-white p-4 rounded-2xl mb-8 text-center"
+      >
+        <p className="font-semibold">
+          🔥 <strong>FREE TRIALS ENDING SOON!</strong> Join 500+ people who booked this week. 
+          <span className="underline ml-2">Limited slots available in your area</span>
+        </p>
+      </motion.div>
+
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* Left Column - Content */}
         <motion.div
@@ -37,8 +50,8 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-hero text-neutral-900 leading-tight"
             >
-              Free Gym Trials Near Me -{' '}
-              <span className="gradient-text">Try Before You Commit</span>
+              <span className="gradient-text">Free Gym Trials</span> Near You -{' '}
+              No Contracts, No Risk
             </motion.h1>
             
             <motion.p
@@ -47,8 +60,8 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-large text-neutral-600 max-w-lg"
             >
-              Book free gym trial sessions at the best gyms near you. 
-              Find gyms, experience facilities, meet trainers, and join only when you're sure.
+              <strong>Try unlimited gyms for FREE.</strong> Book instantly, show up, and join only if you love it. 
+              Over 15,000 fitness enthusiasts already found their perfect gym.
             </motion.p>
           </div>
 
@@ -62,19 +75,19 @@ export default function Hero() {
             <Button
               size="lg"
               onClick={handleDownloadClick}
-              leftIcon={<Download className="w-5 h-5" />}
-              className="text-lg"
+              leftIcon={<Download className="w-5 h-5 text-neutral-900" />}
+              className="text-lg bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 shadow-lg text-neutral-900 font-bold border-2 border-neutral-900"
             >
-              Find a Trial
+              Start Your Free Trial Today
             </Button>
             <Button
               size="lg"
               variant="outline"
               onClick={handleGymOwnerClick}
               rightIcon={<ArrowRight className="w-5 h-5" />}
-              className="text-lg"
+              className="text-lg border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white"
             >
-              List Your Gym
+              Partner With Us
             </Button>
           </motion.div>
 

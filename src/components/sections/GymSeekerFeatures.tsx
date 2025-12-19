@@ -7,38 +7,38 @@ import { FeatureCardProps } from '@/types';
 const gymSeekerFeatures: FeatureCardProps[] = [
   {
     icon: <span className="text-4xl">🎁</span>,
-    title: "Free Trial Sessions",
-    description: "Try any gym before committing\nOne free trial per gym\nExperience facilities, trainers, and community",
+    title: "Unlimited Free Trials",
+    description: "Try every gym in your area - completely FREE\nNo credit card required\nSave ₹5,000+ on memberships you don't want",
     delay: 0.1
   },
   {
     icon: <span className="text-4xl">📍</span>,
-    title: "Smart Discovery",
-    description: "GPS-based gym search\nFind gyms within walking distance\nFilter by amenities and goals",
+    title: "Instant Gym Discovery",
+    description: "500+ verified gyms within 5km radius\nReal-time availability and pricing\nSee photos, reviews, and ratings before visiting",
     delay: 0.2
   },
   {
     icon: <span className="text-4xl">⏱️</span>,
-    title: "Easy Booking",
-    description: "Book trials in seconds\nChoose your preferred time slot\nInstant confirmation",
+    title: "30-Second Booking",
+    description: "Reserve your spot faster than ordering coffee\nFlexible cancellation up to 2 hours before\nAutomatic reminders so you never miss workouts",
     delay: 0.3
   },
   {
     icon: <span className="text-4xl">💪</span>,
-    title: "Personalized Matching",
-    description: "Set your fitness goals\nMatch with gyms that fit your needs\nTrack your gym journey",
+    title: "Perfect Gym Matching",
+    description: "AI-powered recommendations based on your goals\nFind gyms with your favorite equipment\n85% success rate in finding perfect matches",
     delay: 0.4
   },
   {
     icon: <span className="text-4xl">📱</span>,
-    title: "All-in-One Dashboard",
-    description: "Manage all your bookings\nTrack membership progress\nContact gyms directly",
+    title: "Your Fitness Hub",
+    description: "Track all gym visits in one place\nCompare experiences and pricing\nConnect directly with gym managers",
     delay: 0.5
   },
   {
     icon: <span className="text-4xl">🔄</span>,
-    title: "Join When Ready",
-    description: "Skip the trial? Request direct membership\nConvert after trial with one tap\nNo paperwork hassles",
+    title: "Instant Membership",
+    description: "Join your favorite gym with exclusive discounts\nSkip the paperwork with digital sign-ups\nCancel anytime - no questions asked",
     delay: 0.6
   }
 ];
@@ -85,12 +85,12 @@ export default function GymSeekerFeatures() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-h1 text-neutral-900 mb-6">
-            Best Gym Membership Booking App with{' '}
-            <span className="gradient-text">Free Trial Sessions</span>
+            Why 15,000+ Fitness Enthusiasts{' '}
+            <span className="gradient-text">Choose FitByConnect</span>
           </h2>
           <p className="text-large text-neutral-600 max-w-3xl mx-auto">
-            Find gyms near me, book free gym trials, and discover the best fitness centers. 
-            From gym trial sessions to seamless membership booking, we've got your fitness journey covered.
+            <strong>Stop wasting money on wrong gym memberships!</strong> Join thousands who found their perfect gym 
+            through free trials. Book instantly, try risk-free, and join only when you're 100% sure.
           </p>
         </motion.div>
       </div>
@@ -115,17 +115,18 @@ export default function GymSeekerFeatures() {
       >
         <div className="bg-white rounded-2xl p-8 shadow-lg border border-neutral-100 max-w-2xl mx-auto">
           <h3 className="text-h2 text-neutral-900 mb-4">
-            Ready to Find Your Perfect Gym?
+            Don't Waste Another Day in the Wrong Gym
           </h3>
           <p className="text-neutral-600 mb-6">
-            Join thousands of users who have already found their fitness home with free trials.
+            <strong>500+ people found their perfect gym this week.</strong> Your ideal workout space is waiting. 
+            Start your first FREE trial in under 60 seconds.
           </p>
           <Button
             size="lg"
             onClick={handleDownloadClick}
-            className="text-lg"
+            className="text-lg bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 shadow-xl transform hover:scale-105 transition-all duration-200 text-neutral-900 font-bold border-2 border-neutral-900"
           >
-            Find a Trial
+            Book My Free Trial Now
           </Button>
         </div>
       </motion.div>
