@@ -6,9 +6,9 @@ import { Button, Section } from '@/components/ui';
 import { scrollToSection } from '@/lib/utils';
 
 const stats = [
-  { icon: Users, label: 'Active Users', value: '50K+' },
-  { icon: MapPin, label: 'Partner Gyms', value: '500+' },
-  { icon: Star, label: 'App Rating', value: '4.8' },
+  { icon: Users, label: 'Happy Members', value: '15K+' },
+  { icon: MapPin, label: 'Gyms Available', value: '500+' },
+  { icon: Star, label: 'Success Rate', value: '85%' },
 ];
 
 export default function Hero() {
@@ -17,11 +17,24 @@ export default function Hero() {
   };
 
   const handleGymOwnerClick = () => {
-    scrollToSection('gym-owners');
+    window.location.href = '/gym-partner';
   };
 
   return (
     <Section id="hero" background="white" padding="xl" className="pt-32 overflow-hidden">
+      {/* Limited Time Banner */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="bg-gradient-to-r from-accent-600 to-accent-500 text-white p-4 rounded-2xl mb-8 text-center"
+      >
+        <p className="font-semibold">
+          🔥 <strong>FREE TRIALS ENDING SOON!</strong> Join 500+ people who booked this week. 
+          <span className="underline ml-2">Limited slots available in your area</span>
+        </p>
+      </motion.div>
+
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* Left Column - Content */}
         <motion.div
@@ -37,8 +50,8 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-hero text-neutral-900 leading-tight"
             >
-              Transform Your{' '}
-              <span className="gradient-text">Fitness Journey</span>
+              <span className="gradient-text">Free Gym Trials</span> Near You -{' '}
+              No Contracts, No Risk
             </motion.h1>
             
             <motion.p
@@ -47,8 +60,8 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-large text-neutral-600 max-w-lg"
             >
-              The complete fitness ecosystem connecting gym-goers with their perfect workout community. 
-              Find gyms, track progress, and achieve your goals.
+              <strong>Try unlimited gyms for FREE.</strong> Book instantly, show up, and join only if you love it. 
+              Over 15,000 fitness enthusiasts already found their perfect gym.
             </motion.p>
           </div>
 
@@ -62,19 +75,19 @@ export default function Hero() {
             <Button
               size="lg"
               onClick={handleDownloadClick}
-              leftIcon={<Download className="w-5 h-5" />}
-              className="text-lg"
+              leftIcon={<Download className="w-5 h-5 text-neutral-900" />}
+              className="text-lg bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 shadow-lg text-neutral-900 font-bold border-2 border-neutral-900"
             >
-              Download Free App
+              Start Your Free Trial Today
             </Button>
             <Button
               size="lg"
               variant="outline"
               onClick={handleGymOwnerClick}
               rightIcon={<ArrowRight className="w-5 h-5" />}
-              className="text-lg"
+              className="text-lg border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white"
             >
-              Join as Gym Owner
+              Partner With Us
             </Button>
           </motion.div>
 
@@ -97,7 +110,7 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right Column - App Mockup */}
+        {/* Right Column - App Screenshot */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -105,7 +118,7 @@ export default function Hero() {
           className="relative"
         >
           <div className="relative z-10">
-            {/* Phone Mockup */}
+            {/* Real App Screenshot */}
             <motion.div
               animate={{ 
                 y: [0, -10, 0],
@@ -116,19 +129,13 @@ export default function Hero() {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="mx-auto w-72 h-[600px] bg-neutral-900 rounded-3xl p-2 shadow-2xl"
+              className="mx-auto w-72 h-auto rounded-3xl shadow-2xl overflow-hidden"
             >
-              <div className="w-full h-full bg-gradient-to-br from-primary-500 to-secondary-500 rounded-3xl flex items-center justify-center">
-                <div className="text-white text-center space-y-4">
-                  <div className="w-16 h-16 bg-white/20 rounded-2xl mx-auto flex items-center justify-center">
-                    <Users className="w-8 h-8" />
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-bold">FitIndia</h3>
-                    <p className="text-sm opacity-90">Your Fitness Companion</p>
-                  </div>
-                </div>
-              </div>
+              <img 
+                src="/home-screen.png" 
+                alt="FitByConnect App - Discover Gyms and Book Free Trials"
+                className="w-full h-auto object-cover rounded-3xl"
+              />
             </motion.div>
 
             {/* Floating Elements */}
@@ -149,8 +156,8 @@ export default function Hero() {
                   <Star className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-neutral-900">Workout Complete!</div>
-                  <div className="text-xs text-neutral-600">+50 XP earned</div>
+                  <div className="text-sm font-semibold text-neutral-900">Trial Booked!</div>
+                  <div className="text-xs text-neutral-600">Fitness First - Today 6PM</div>
                 </div>
               </div>
             </motion.div>
@@ -173,8 +180,8 @@ export default function Hero() {
                   <MapPin className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-neutral-900">Gym Found</div>
-                  <div className="text-xs text-neutral-600">2.5km away</div>
+                  <div className="text-sm font-semibold text-neutral-900">500+ Gyms</div>
+                  <div className="text-xs text-neutral-600">Available near you</div>
                 </div>
               </div>
             </motion.div>
@@ -200,12 +207,12 @@ export default function Hero() {
         >
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full" aria-label="Google Play Store icon">
                 <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
               </svg>
             </div>
             <div className="text-left">
-              <div className="text-xs opacity-90">GET IT ON</div>
+              <div className="text-xs opacity-90">DOWNLOAD APP</div>
               <div className="text-sm font-semibold">Google Play</div>
             </div>
           </div>
