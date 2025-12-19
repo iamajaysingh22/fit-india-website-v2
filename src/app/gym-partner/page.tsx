@@ -1,5 +1,5 @@
 import { Header, Footer } from '@/components/layout';
-import { GymOwners } from '@/components/sections';
+import { GymOwners, GymPartnerFAQ } from '@/components/sections';
 
 export default function GymPartner() {
   return (
@@ -7,6 +7,7 @@ export default function GymPartner() {
       <Header />
       <main>
         <GymOwners />
+        <GymPartnerFAQ />
       </main>
       <Footer />
     </div>

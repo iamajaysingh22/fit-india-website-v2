@@ -1,5 +1,5 @@
 import { Header, Footer } from '@/components/layout';
-import { Hero, Features, Solution, GymSeekerFeatures, Testimonials, Contact } from '@/components/sections';
+import { Hero, Features, Solution, GymSeekerFeatures, UserFAQ, Testimonials, Contact } from '@/components/sections';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -26,6 +26,7 @@ export default function Home() {
         <Features />
         <Solution />
         <GymSeekerFeatures />
+        <UserFAQ />
         <Testimonials />
         <Contact />
       </main>
