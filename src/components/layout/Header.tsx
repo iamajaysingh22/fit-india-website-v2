@@ -6,18 +6,25 @@ import { Menu, X, Download } from 'lucide-react';
 import { Button } from '@/components/ui';
 import { scrollToSection } from '@/lib/utils';
 import { NavigationItem } from '@/types';
+import { useRouter, usePathname } from 'next/navigation';
 
 const navigation: NavigationItem[] = [
   { name: 'Home', href: '#hero' },
-  { name: 'Features', href: '#features' },
-  { name: 'For Gyms', href: '#gym-owners' },
-  { name: 'Testimonials', href: '#testimonials' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Why Choose Us', href: '#gym-seeker-features' },
+  { name: 'How It Works', href: '#solution' },
+  { name: 'FAQ', href: '#user-faq' },
+  { name: 'Reviews', href: '#testimonials' },
+];
+
+const routeNavigation: NavigationItem[] = [
+  { name: 'For Gym Owners', href: '/gym-partner' },
 ];
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,9 +36,41 @@ export default function Header() {
   }, []);
 
   const handleNavClick = (href: string) => {
-    const sectionId = href.replace('#', '');
-    scrollToSection(sectionId);
+    if (href.startsWith('#')) {
+      // Handle anchor links
+      if (pathname !== '/') {
+        // Navigate to home page first, then scroll to section
+        router.push(`/${href}`);
+      } else {
+        // Already on home page, just scroll
+        const sectionId = href.replace('#', '');
+        scrollToSection(sectionId);
+      }
+    } else {
+      // Handle route navigation
+      router.push(href);
+    }
     setIsMobileMenuOpen(false);
+  };
+
+  // Get navigation items based on current page
+  const getNavigationItems = () => {
+    if (pathname === '/gym-partner') {
+      return [
+        { name: 'Home', href: '/' },
+        { name: 'Benefits', href: '#gym-owners' },
+        { name: 'FAQ', href: '#gym-partner-faq' },
+        { name: 'Get Started', href: '#contact' },
+      ];
+    }
+    return navigation;
+  };
+
+  const getRouteNavigation = () => {
+    if (pathname === '/gym-partner') {
+      return [{ name: 'For Users', href: '/' }];
+    }
+    return routeNavigation;
   };
 
   const handleDownloadClick = () => {
@@ -51,17 +90,29 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center"
           >
-            <span className="text-2xl font-bold gradient-text">FitIndia</span>
+            <span className="text-2xl font-bold gradient-text">FitByConnect</span>
           </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {navigation.map((item, index) => (
+            {getNavigationItems().map((item, index) => (
               <motion.button
                 key={item.name}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
+                onClick={() => handleNavClick(item.href)}
+                className="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200"
+              >
+                {item.name}
+              </motion.button>
+            ))}
+            {getRouteNavigation().map((item, index) => (
+              <motion.button
+                key={item.name}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: (getNavigationItems().length + index) * 0.1 }}
                 onClick={() => handleNavClick(item.href)}
                 className="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200"
               >
@@ -81,7 +132,7 @@ export default function Header() {
               leftIcon={<Download className="w-4 h-4" />}
               size="md"
             >
-              Download App
+              Start Free Trial
             </Button>
           </motion.div>
 
@@ -107,12 +158,24 @@ export default function Header() {
               className="lg:hidden border-t border-neutral-200 bg-white/95 backdrop-blur-sm"
             >
               <div className="py-4 space-y-4">
-                {navigation.map((item, index) => (
+                {getNavigationItems().map((item, index) => (
                   <motion.button
                     key={item.name}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
+                    onClick={() => handleNavClick(item.href)}
+                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200"
+                  >
+                    {item.name}
+                  </motion.button>
+                ))}
+                {getRouteNavigation().map((item, index) => (
+                  <motion.button
+                    key={item.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: (getNavigationItems().length + index) * 0.1 }}
                     onClick={() => handleNavClick(item.href)}
                     className="block w-full text-left px-4 py-2 text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200"
                   >
@@ -126,7 +189,7 @@ export default function Header() {
                     size="md"
                     className="w-full"
                   >
-                    Download App
+                    Start Free Trial
                   </Button>
                 </div>
               </div>

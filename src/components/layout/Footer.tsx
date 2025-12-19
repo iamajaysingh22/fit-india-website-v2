@@ -19,7 +19,7 @@ const footerSections: FooterSection[] = [
   {
     title: 'For Users',
     links: [
-      { name: 'Download App', href: '#hero' },
+      { name: 'Find a Trial', href: '#hero' },
       { name: 'How it Works', href: '#features' },
       { name: 'Find Gyms', href: '#features' },
       { name: 'Track Progress', href: '#features' },
@@ -39,10 +39,10 @@ const footerSections: FooterSection[] = [
   {
     title: 'Legal & Support',
     links: [
-      { name: 'Privacy Policy', href: '#', external: true },
-      { name: 'Terms of Service', href: '#', external: true },
+      { name: 'Privacy Policy', href: '/privacy-policy', external: true },
+      { name: 'Terms & Conditions', href: '/terms-and-conditions', external: true },
       { name: 'Cookie Policy', href: '#', external: true },
-      { name: 'FAQ', href: '#', external: true },
+      { name: 'FAQ', href: '#user-faq' },
       { name: 'Help Center', href: '#contact' },
     ]
   }
@@ -73,9 +73,13 @@ const socialLinks: SocialLink[] = [
 
 export default function Footer() {
   const handleLinkClick = (href: string, external?: boolean) => {
-    if (external || href.startsWith('http')) {
+    if (href.startsWith('http')) {
       window.open(href, '_blank');
+    } else if (href.startsWith('/')) {
+      // Internal page route
+      window.location.href = href;
     } else {
+      // Anchor link
       const sectionId = href.replace('#', '');
       scrollToSection(sectionId);
     }
@@ -98,7 +102,7 @@ export default function Footer() {
             className="lg:col-span-1"
           >
             <div className="mb-6">
-              <span className="text-2xl font-bold gradient-text">FitIndia</span>
+              <span className="text-2xl font-bold gradient-text">FitByConnect</span>
             </div>
             
             <p className="text-neutral-300 mb-6 leading-relaxed">
@@ -175,7 +179,7 @@ export default function Footer() {
           <div className="text-center">
             <h3 className="text-h3 mb-4">Ready to Transform Your Fitness Journey?</h3>
             <p className="text-neutral-300 mb-8 max-w-2xl mx-auto">
-              Download the FitIndia app today and join thousands of users who have already 
+              Download the FitByConnect app today and join thousands of users who have already 
               transformed their fitness journey.
             </p>
             
@@ -185,7 +189,7 @@ export default function Footer() {
               leftIcon={<Download className="w-5 h-5" />}
               className="mb-8"
             >
-              Download Free App
+              Find a Trial
             </Button>
 
             {/* Google Play Badge */}
@@ -220,21 +224,21 @@ export default function Footer() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-neutral-400 text-sm">
-              © 2024 FitIndia. All rights reserved.
+              © 2024 FitByConnect. All rights reserved.
             </p>
             
             <div className="flex space-x-6">
               <button 
-                onClick={() => handleLinkClick('#', true)}
+                onClick={() => handleLinkClick('/privacy-policy', true)}
                 className="text-neutral-400 hover:text-primary-400 text-sm transition-colors duration-200"
               >
                 Privacy Policy
               </button>
               <button 
-                onClick={() => handleLinkClick('#', true)}
+                onClick={() => handleLinkClick('/terms-and-conditions', true)}
                 className="text-neutral-400 hover:text-primary-400 text-sm transition-colors duration-200"
               >
-                Terms of Service
+                Terms & Conditions
               </button>
               <button 
                 onClick={() => handleLinkClick('#', true)}

@@ -136,7 +136,7 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
           >
             <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-h3 text-neutral-900 mb-6">Get Started Today</h3>
+              <h3 className="text-h3 text-neutral-900 mb-6">Ready to Transform Your Gym?</h3>
               
               {submitStatus === 'success' && (
                 <div className="mb-6 p-4 bg-accent-50 border border-accent-200 rounded-lg flex items-center space-x-3">
@@ -265,10 +265,14 @@ export default function Contact() {
                   />
                   <label className="text-sm text-neutral-700">
                     I accept the{' '}
-                    <a href="#" className="text-primary-600 hover:underline">
+                    <a href="/privacy-policy" className="text-primary-600 hover:underline">
                       Privacy Policy
                     </a>{' '}
-                    and agree to receive communications from FitIndia.
+                    and{' '}
+                    <a href="/terms-and-conditions" className="text-primary-600 hover:underline">
+                      Terms & Conditions
+                    </a>{' '}
+                    and agree to receive communications from FitByConnect.
                   </label>
                 </div>
                 {errors.privacyAccepted && (
@@ -278,9 +282,9 @@ export default function Contact() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full"
+                  className="w-full bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 text-neutral-900 font-bold border-2 border-neutral-900"
                   disabled={submitStatus === 'loading'}
-                  leftIcon={submitStatus === 'loading' ? <Loader2 className="w-5 h-5 animate-spin" /> : undefined}
+                  leftIcon={submitStatus === 'loading' ? <Loader2 className="w-5 h-5 animate-spin text-neutral-900" /> : undefined}
                 >
                   {submitStatus === 'loading' ? 'Sending...' : 'Send Message'}
                 </Button>
