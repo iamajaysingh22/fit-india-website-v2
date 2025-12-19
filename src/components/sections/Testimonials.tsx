@@ -77,7 +77,7 @@ export default function Testimonials() {
           </h2>
           <p className="text-large text-neutral-600 max-w-2xl mx-auto">
             Join thousands of satisfied users and gym owners who have transformed 
-            their fitness journey with FitIndia.
+            their fitness journey with FitByConnect.
           </p>
         </motion.div>
       </div>

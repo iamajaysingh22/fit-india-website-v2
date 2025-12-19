@@ -85,12 +85,12 @@ export default function GymSeekerFeatures() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-h1 text-neutral-900 mb-6">
-            Everything You Need as a{' '}
-            <span className="gradient-text">Gym Seeker</span>
+            Best Gym Membership Booking App with{' '}
+            <span className="gradient-text">Free Trial Sessions</span>
           </h2>
           <p className="text-large text-neutral-600 max-w-3xl mx-auto">
-            Discover powerful features designed to help you find your perfect gym match. 
-            From free trials to seamless bookings, we've got your fitness journey covered.
+            Find gyms near me, book free gym trials, and discover the best fitness centers. 
+            From gym trial sessions to seamless membership booking, we've got your fitness journey covered.
           </p>
         </motion.div>
       </div>

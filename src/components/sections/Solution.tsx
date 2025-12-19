@@ -79,8 +79,8 @@ export default function Solution() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-h1 text-neutral-900 mb-6">
-            The Smart Way to Find Your{' '}
-            <span className="gradient-text">Fitness Home</span>
+            How to Find Gyms Near Me with{' '}
+            <span className="gradient-text">Free Fitness Center Trials</span>
           </h2>
         </motion.div>
       </div>

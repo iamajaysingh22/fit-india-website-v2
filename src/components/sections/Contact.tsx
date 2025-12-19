@@ -268,7 +268,7 @@ export default function Contact() {
                     <a href="#" className="text-primary-600 hover:underline">
                       Privacy Policy
                     </a>{' '}
-                    and agree to receive communications from FitIndia.
+                    and agree to receive communications from FitByConnect.
                   </label>
                 </div>
                 {errors.privacyAccepted && (

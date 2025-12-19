@@ -98,7 +98,7 @@ export default function Footer() {
             className="lg:col-span-1"
           >
             <div className="mb-6">
-              <span className="text-2xl font-bold gradient-text">FitIndia</span>
+              <span className="text-2xl font-bold gradient-text">FitByConnect</span>
             </div>
             
             <p className="text-neutral-300 mb-6 leading-relaxed">
@@ -175,7 +175,7 @@ export default function Footer() {
           <div className="text-center">
             <h3 className="text-h3 mb-4">Ready to Transform Your Fitness Journey?</h3>
             <p className="text-neutral-300 mb-8 max-w-2xl mx-auto">
-              Download the FitIndia app today and join thousands of users who have already 
+              Download the FitByConnect app today and join thousands of users who have already 
               transformed their fitness journey.
             </p>
             
@@ -220,7 +220,7 @@ export default function Footer() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-neutral-400 text-sm">
-              © 2024 FitIndia. All rights reserved.
+              © 2024 FitByConnect. All rights reserved.
             </p>
             
             <div className="flex space-x-6">

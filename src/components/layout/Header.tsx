@@ -70,7 +70,7 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center"
           >
-            <span className="text-2xl font-bold gradient-text">FitIndia</span>
+            <span className="text-2xl font-bold gradient-text">FitByConnect</span>
           </motion.div>
 
           {/* Desktop Navigation */}
