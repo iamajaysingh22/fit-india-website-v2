@@ -39,10 +39,10 @@ const footerSections: FooterSection[] = [
   {
     title: 'Legal & Support',
     links: [
-      { name: 'Privacy Policy', href: '#', external: true },
-      { name: 'Terms of Service', href: '#', external: true },
+      { name: 'Privacy Policy', href: '/privacy-policy', external: true },
+      { name: 'Terms & Conditions', href: '/terms-and-conditions', external: true },
       { name: 'Cookie Policy', href: '#', external: true },
-      { name: 'FAQ', href: '#', external: true },
+      { name: 'FAQ', href: '#user-faq' },
       { name: 'Help Center', href: '#contact' },
     ]
   }
@@ -73,9 +73,13 @@ const socialLinks: SocialLink[] = [
 
 export default function Footer() {
   const handleLinkClick = (href: string, external?: boolean) => {
-    if (external || href.startsWith('http')) {
+    if (href.startsWith('http')) {
       window.open(href, '_blank');
+    } else if (href.startsWith('/')) {
+      // Internal page route
+      window.location.href = href;
     } else {
+      // Anchor link
       const sectionId = href.replace('#', '');
       scrollToSection(sectionId);
     }
@@ -225,16 +229,16 @@ export default function Footer() {
             
             <div className="flex space-x-6">
               <button 
-                onClick={() => handleLinkClick('#', true)}
+                onClick={() => handleLinkClick('/privacy-policy', true)}
                 className="text-neutral-400 hover:text-primary-400 text-sm transition-colors duration-200"
               >
                 Privacy Policy
               </button>
               <button 
-                onClick={() => handleLinkClick('#', true)}
+                onClick={() => handleLinkClick('/terms-and-conditions', true)}
                 className="text-neutral-400 hover:text-primary-400 text-sm transition-colors duration-200"
               >
-                Terms of Service
+                Terms & Conditions
               </button>
               <button 
                 onClick={() => handleLinkClick('#', true)}

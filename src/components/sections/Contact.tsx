@@ -265,8 +265,12 @@ export default function Contact() {
                   />
                   <label className="text-sm text-neutral-700">
                     I accept the{' '}
-                    <a href="#" className="text-primary-600 hover:underline">
+                    <a href="/privacy-policy" className="text-primary-600 hover:underline">
                       Privacy Policy
+                    </a>{' '}
+                    and{' '}
+                    <a href="/terms-and-conditions" className="text-primary-600 hover:underline">
+                      Terms & Conditions
                     </a>{' '}
                     and agree to receive communications from FitByConnect.
                   </label>
@@ -278,9 +282,9 @@ export default function Contact() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full"
+                  className="w-full bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 text-neutral-900 font-bold border-2 border-neutral-900"
                   disabled={submitStatus === 'loading'}
-                  leftIcon={submitStatus === 'loading' ? <Loader2 className="w-5 h-5 animate-spin" /> : undefined}
+                  leftIcon={submitStatus === 'loading' ? <Loader2 className="w-5 h-5 animate-spin text-neutral-900" /> : undefined}
                 >
                   {submitStatus === 'loading' ? 'Sending...' : 'Send Message'}
                 </Button>

@@ -110,7 +110,7 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right Column - App Mockup */}
+        {/* Right Column - App Screenshot */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -118,7 +118,7 @@ export default function Hero() {
           className="relative"
         >
           <div className="relative z-10">
-            {/* Phone Mockup */}
+            {/* Real App Screenshot */}
             <motion.div
               animate={{ 
                 y: [0, -10, 0],
@@ -129,19 +129,13 @@ export default function Hero() {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="mx-auto w-72 h-[600px] bg-neutral-900 rounded-3xl p-2 shadow-2xl"
+              className="mx-auto w-72 h-auto rounded-3xl shadow-2xl overflow-hidden"
             >
-              <div className="w-full h-full bg-gradient-to-br from-primary-500 to-secondary-500 rounded-3xl flex items-center justify-center">
-                <div className="text-white text-center space-y-4">
-                  <div className="w-16 h-16 bg-white/20 rounded-2xl mx-auto flex items-center justify-center">
-                    <Users className="w-8 h-8" />
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-bold">FitByConnect</h3>
-                    <p className="text-sm opacity-90">Your Fitness Companion</p>
-                  </div>
-                </div>
-              </div>
+              <img 
+                src="/home-screen.png" 
+                alt="FitByConnect App - Discover Gyms and Book Free Trials"
+                className="w-full h-auto object-cover rounded-3xl"
+              />
             </motion.div>
 
             {/* Floating Elements */}
@@ -162,8 +156,8 @@ export default function Hero() {
                   <Star className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-neutral-900">Workout Complete!</div>
-                  <div className="text-xs text-neutral-600">+50 XP earned</div>
+                  <div className="text-sm font-semibold text-neutral-900">Trial Booked!</div>
+                  <div className="text-xs text-neutral-600">Fitness First - Today 6PM</div>
                 </div>
               </div>
             </motion.div>
@@ -186,8 +180,8 @@ export default function Hero() {
                   <MapPin className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-neutral-900">Gym Found</div>
-                  <div className="text-xs text-neutral-600">2.5km away</div>
+                  <div className="text-sm font-semibold text-neutral-900">500+ Gyms</div>
+                  <div className="text-xs text-neutral-600">Available near you</div>
                 </div>
               </div>
             </motion.div>
