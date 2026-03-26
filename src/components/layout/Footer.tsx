@@ -41,6 +41,7 @@ const footerSections: FooterSection[] = [
     links: [
       { name: 'Privacy Policy', href: '/privacy-policy', external: true },
       { name: 'Terms & Conditions', href: '/terms-and-conditions', external: true },
+      { name: 'Delete Account', href: '/delete-account', external: true },
       { name: 'Cookie Policy', href: '#', external: true },
       { name: 'FAQ', href: '#user-faq' },
       { name: 'Help Center', href: '#contact' },
@@ -113,15 +114,12 @@ export default function Footer() {
             <div className="space-y-3 mb-6">
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-primary-500" />
-                <span className="text-neutral-300">support@fitindia.com</span>
+                <span className="text-neutral-300">support@fitbyconnect.in</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="w-4 h-4 text-primary-500" />
-                <span className="text-neutral-300">+91 98765 43210</span>
-              </div>
+              
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-primary-500" />
-                <span className="text-neutral-300">Mumbai, Maharashtra</span>
+                <span className="text-neutral-300">Greater Noida, Uttar Pradesh</span>
               </div>
             </div>
             
@@ -234,13 +232,19 @@ export default function Footer() {
               >
                 Privacy Policy
               </button>
-              <button 
+              <button
                 onClick={() => handleLinkClick('/terms-and-conditions', true)}
                 className="text-neutral-400 hover:text-primary-400 text-sm transition-colors duration-200"
               >
                 Terms & Conditions
               </button>
-              <button 
+              <button
+                onClick={() => handleLinkClick('/delete-account', true)}
+                className="text-neutral-400 hover:text-primary-400 text-sm transition-colors duration-200"
+              >
+                Delete Account
+              </button>
+              <button
                 onClick={() => handleLinkClick('#', true)}
                 className="text-neutral-400 hover:text-primary-400 text-sm transition-colors duration-200"
               >
